@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../../public/assets/Logo.png";
+import logo from "../../public/assets/Logo.webp";
 import Button from "./Button.astro";
 interface NavbarProps {
     additional?: string;
@@ -10,7 +10,7 @@ interface NavbarProps {
     
     <div class="flex w-2/5">
         <div class="w-1/4">
-		<a href="www.google.com" rel="noopener noreferrer">
+		<a href="/" rel="noopener noreferrer">
 			<Image class= "w-20" src={logo} alt="Jean's Logo" loading="eager"/></a>
         </div>
         <div class="flex justify-between items-center w-3/4 ">
@@ -42,7 +42,7 @@ interface NavbarProps {
             <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
             <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
         </p>
-        <Button text="Registrarse" />
+        <Button text="Regístrate" />
     </div>
 </nav>
 
