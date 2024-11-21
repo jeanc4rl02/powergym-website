@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/assets/Logo.png";
+import Button from "./Button.astro";
+interface NavbarProps {
+    additional?: string;
+}
+---
+<nav class="sticky top-0 left-0 z-50 flex justify-between items-center text-white py-3 w-full h-16 px-10 bg-custom-black shadow-2xl ">
+    
+    <div class="flex w-2/5">
+        <div class="w-1/4">
+		<a href="www.google.com" rel="noopener noreferrer">
+			<Image class= "w-20" src={logo} alt="Jean's Logo" loading="eager"/></a>
+        </div>
+        <div class="flex justify-between items-center w-3/4 ">
+            <p class=" m-6 group relative w-max">
+                <a href="/">Inicio</a>
+                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+            </p>
+            <p class="m-6 group relative w-max">
+                <a href="/sedes">Sedes</a>
+                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+            </p>
+            <p class="m-6 group relative w-max">
+                <a href="/clases">Clases</a>
+                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+            </p>
+            <p class="m-6 group relative w-max">
+                <a href="/membresias">Membresías</a>
+                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+            </p>
+        </div>
+    </div>
+    <div class="flex w-1/5 justify-evenly items-center">
+        <p class="m-6 group relative w-max">
+            <a href="/login">Ingresar </a>
+            <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+            <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
+        </p>
+        <Button text="Registrarse" />
+    </div>
+</nav>
+
+    
