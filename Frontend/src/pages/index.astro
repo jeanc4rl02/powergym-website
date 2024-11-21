@@ -1,17 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Navbar from '../components/Navbar.astro';
+import Slider from '../components/Slider.astro';
 ---
 
 <Layout title="PowerGym">
 	<header>
-		
+		<Slider/>
 	</header>
-	<main>
-	</main>
-	<footer>
 
+	<main>
+		<h1 class="text-4xl text-center">¿Por qué <span class="text-custom-green underline decoration-black">elegirnos</span>?</h1>
+	</main>
+		<div class="link-card-grid m-5">
+			<Card 
+				title="Flexibilidad Horaria"
+				body="Contamos con un amplio horario de atención para que puedas entrenar en el momento que más te convenga."
+				href="/assets/FlexibilidadHoraria.jpg"/> 
+			<Card 
+				title="Clases personalizadas" 
+				body="Contamos con un equipo de profesionales que te ayudarán a alcanzar tus objetivos." 
+				href="/assets/ClasesPersonalizadas.jpg"/>
+			<Card
+				title="Membresías"
+				body="Contamos con diferentes planes de membresía para que puedas elegir el que mejor se adapte a tus necesidades."
+				href="/assets/Membresias.jpg"/>
+			<Card
+				title="Expertos en nutrición"
+				body="Contamos con un equipo de nutricionistas que te ayudarán a llevar una alimentación saludable."
+				href="/assets/Nutricion.jpg"/>
+		</div>
+	<footer>
 	</footer>
 </Layout>
 
@@ -21,7 +40,6 @@ import Navbar from '../components/Navbar.astro';
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}
@@ -33,13 +51,6 @@ import Navbar from '../components/Navbar.astro';
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
