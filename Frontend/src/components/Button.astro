@@ -1,0 +1,9 @@
+---
+interface ButtonProps {
+    text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<button class="before:ease relative overflow-hidden text-black bg-custom-green hover:bg-custom-green-700 rounded-lg px-3 py-2 shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-green-500 hover:before:-translate-x-40">{text}</button>
