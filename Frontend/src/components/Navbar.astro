@@ -2,48 +2,41 @@
 import { Image } from "astro:assets";
 import logo from "../../public/assets/Logo.webp";
 import Button from "./Button.astro";
+
 interface NavbarProps {
     additional?: string;
 }
 ---
-<nav class="sticky top-0 left-0 z-50 flex justify-between items-center text-white py-3 w-full h-16 px-10 bg-custom-black shadow-2xl ">
-    
-    <div class="flex w-2/5">
-        <div class="w-1/4">
-		<a href="/" rel="noopener noreferrer">
-			<Image class= "w-20" src={logo} alt="Jean's Logo" loading="eager"/></a>
-        </div>
-        <div class="flex justify-between items-center w-3/4 ">
-            <p class=" m-6 group relative w-max">
-                <a href="/">Inicio</a>
-                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-            </p>
-            <p class="m-6 group relative w-max">
-                <a href="/sedes">Sedes</a>
-                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-            </p>
-            <p class="m-6 group relative w-max">
-                <a href="/clases">Clases</a>
-                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-            </p>
-            <p class="m-6 group relative w-max">
-                <a href="/membresias">Membresías</a>
-                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-            </p>
-        </div>
+<nav class="sticky top-0 left-0 z-50 flex justify-between items-center text-white py-3 w-full h-16 px-10 bg-custom-black shadow-2xl">
+    <div class="flex items-center justify-between w-full md:w-auto">
+        <!-- Logo -->
+        <a href="/" rel="noopener noreferrer">
+            <Image class="w-20" src={logo} alt="Jean's Logo" loading="eager" />
+        </a>
+        <button id="menu-toggle" aria-label="Toggle Menu" 
+            class="block md:hidden text-white focus:outline-none ml-4"
+            onclick="toggleMenu()">
+            <i class="icon-[ci--hamburger] text-2xl"></i>
+        </button>
     </div>
-    <div class="flex w-1/5 justify-evenly items-center">
-        <p class="m-6 group relative w-max">
-            <a href="/login">Ingresar </a>
-            <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-            <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-custom-green group-hover:w-3/6"></span>
-        </p>
-        <Button text="Regístrate" />
+    <div id="menu" class="hidden md:flex flex-col md:flex-row md:items-center w-full md:w-auto">
+        <div class="flex flex-col md:flex-row md:space-x-6">
+            <a href="/" class="py-2 md:py-0 md:px-4 hover:text-custom-green">Inicio</a>
+            <a href="/sedes" class="py-2 md:py-0 md:px-4 hover:text-custom-green">Sedes</a>
+            <a href="/clases" class="py-2 md:py-0 md:px-4 hover:text-custom-green">Clases</a>
+            <a href="/membresias" class="py-2 md:py-0 md:px-4 hover:text-custom-green">Membresías</a>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+            <a href="/login" class="py-2 px-4 hover:text-custom-green">Ingresar</a>
+            <Button text="Regístrate" />
+        </div>
     </div>
 </nav>
 
-    
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
+}
+</script>
