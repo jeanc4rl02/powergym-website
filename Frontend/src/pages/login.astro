@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Login - PowerGym">
+  <main class="flex items-center justify-center min-h-screen bg-gray-100">
+    <form class="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4" method="POST" id="loginForm">
+       
+      <!-- TÍTULO -->
+      <h1 class="text-[26px] font-bold text-center text-black leading-tight">
+        Iniciar <span class="text-[#88CE02] underline" style="text-decoration-color: #242424; text-underline-offset: 4px;">Sesión</span>
+      </h1>      
+      
+      <!-- Usuario -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-black-700">Usuario:</label>
+        <div class="relative">
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Ingrese su usuario"
+            class="px-3"
+            style=" 
+            width: 320px;
+            height: 44px;
+            background-color: #F2F2F2;
+            border: 1px solid #8DC90E6B;
+            border-radius: 5px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+            "
+          />
+          </div>
+        <p id="email-error" class="text-xs text-red-600 text-sm mt-1 hidden">El email ingresado no es válido</p>
+        </div>
+
+      <!-- Contraseña -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-black-700">Contraseña:</label>
+        <div class="relative">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="6"
+            placeholder="Ingrese su contraseña"
+            class="px-3"
+            style="
+            width: 320px;
+            height: 44px;
+            background-color: #F2F2F2;
+            border: 1px solid #D1D5DB;
+            border-radius: 5px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+            "
+          />
+          </div>
+          <p id="password-error" class="text-xs text-red-600 text-sm mt-1 hidden">La contraseña ingresada no es válida</p>
+          </div>
+
+      <!-- Botón -->
+      <div class="flex justify-center"> 
+        <button
+        type="submit"
+        style="
+        background-color: #8DC90E;
+        width: 80px;
+        height: 35px;
+        font-family: 'Plavsky', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+        color: #242424;
+        border-radius: 5px;
+      "
+    >
+          Ingresar
+        </button>
+      </div>
+      
+      <!-- Línea decorativa debajo del título-->
+      <div class="mx-auto mt-4 w-[180px]" style="border-bottom: 1px solid #9ca3af;"></div>
+      
+      <!-- Registro -->
+      <p class="text-center text-sm">
+        ¿No tienes un usuario?
+        <a href="/registro" class="text-blue-600 underline">Regístrate aquí</a>.
+      </p>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/src/scripts/login.js"></script>
+
+
+  </main>
+</Layout>
