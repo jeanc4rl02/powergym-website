@@ -5,6 +5,8 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 
 form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
   let valid = true;
 
   // Validación de email
@@ -23,15 +25,24 @@ form.addEventListener("submit", async function (e) {
     passwordError.classList.add("hidden");
   }
 
-  if (!valid) {
-    e.preventDefault();
-    return;
-  }
-
+  if (!valid) return; 
+    
   const url = 'http://localhost:3000/api/login';
   
   try {
   // Simulación de login exitoso
+  const response = await axios.post(url, {
+    email: email.value,
+    password: password.value
+  });
+
+  console.log("Respuesta de la API:", response.data);
+  alert("¡Inicio de sesión exitoso!");
+
+} catch (error) {
+  console.log("Simulación activda: no se pudo conectar al servidor real");
+
+  // Simulación de respuesta
   const mockResponse = {
     data: {
       message: "Inicio de sesión exitoso",
@@ -39,15 +50,11 @@ form.addEventListener("submit", async function (e) {
         id: 1,
         name: "Michelle",
         email: email.value
-      }
-    }
+      },
+    },
   };
 
   console.log("Login simulado:", mockResponse.data);
   alert("¡Inicio de sesión simulado exitosamente!");
-
-} catch (error) {
-  console.error("Error simulado en el login:", error);
-  alert("Error en el inicio de sesión.");
-}
+ } 
 });

@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../../public/assets/Logo.webp";
 import Button from "./Button.astro";
 
 interface NavbarProps {
@@ -11,7 +9,7 @@ interface NavbarProps {
     <div class="flex items-center justify-between w-full md:w-auto">
         <!-- Logo -->
         <a href="/" rel="noopener noreferrer">
-            <Image class="w-20" src={logo} alt="Jean's Logo" loading="eager" />
+            <img class="w-20" src="/assets/Logo.webp" alt="Jean's Logo" loading="eager" />
         </a>
         <button id="menu-toggle" aria-label="Toggle Menu" 
             class="block md:hidden text-white focus:outline-none ml-4"
